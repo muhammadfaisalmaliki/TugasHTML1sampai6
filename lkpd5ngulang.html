@@ -1,0 +1,68 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Hitung Mundur</title>  
+    <style>  
+        body {  
+            display: flex;  
+            flex-direction: column;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            background-color: #f0f0f0;  
+            font-family: Arial, sans-serif;  
+        }  
+        button {  
+            padding: 15px 30px;  
+            font-size: 16px;  
+            color: white;  
+            background-color: #007BFF;  
+            border: none;  
+            border-top-left-radius: 40px;  
+            border-bottom-right-radius: 40px;
+            cursor: pointer;  
+            transition: background-color 0.3s;  
+        }  
+        button:hover {  
+            background-color: #0056b3;  
+        }  
+        #output {  
+            margin-top: 20px;  
+            font-size: 300px;   
+            color: white;  
+            background-color: red;
+            padding: 20px;  
+            border-radius: 5px;  
+            display: none;  
+            width: 2000px; 
+            height: 2000px;
+            text-align: center;
+        }  
+    </style>  
+</head>  
+<body>  
+    <button onclick="startCountdown()">pencet geh</button>  
+    <div id="output"></div>  
+
+    <script>  
+        function startCountdown() {  
+            let countdown =5;  
+            const outputDiv = document.getElementById('output');  
+            outputDiv.style.display = 'block'; 
+            outputDiv.innerHTML = countdown;
+
+            const interval = setInterval(() => {  
+                countdown--;  
+                outputDiv.innerHTML = countdown;  
+
+                if (countdown <= 0) {  
+                    clearInterval(interval);  
+                    outputDiv.style.display = 'none'; 
+                }  
+            }, 1000);
+        }  
+    </script>  
+</body>  
+</html>

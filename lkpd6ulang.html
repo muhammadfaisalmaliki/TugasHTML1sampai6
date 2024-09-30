@@ -1,0 +1,58 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pencarian Teks</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            padding: 20px;  
+        }  
+
+        .result {  
+            margin-top: 20px;  
+            font-weight: bold;  
+        }  
+
+        .error {  
+            color: red;  
+        }  
+    </style>  
+</head>  
+<body>
+    
+    <center>
+
+    <h1>LPG 3NAMMM</h1>  
+
+    <form id="searchForm" onsubmit="return handleSearch(event)">  
+        <input type="text" id="searchInput" placeholder="TULIS COYY" required>  
+        <button type="submit">Cari</button>  
+    </form>  
+
+    <div class="result" id="result"></div>  
+    <div class="error" id="errorMessage"></div>  
+
+    <script>  
+        function handleSearch(event) {  
+            event.preventDefault(); 
+
+            const input = document.getElementById('searchInput').value;  
+            const resultDiv = document.getElementById('result');  
+            const errorDiv = document.getElementById('errorMessage');  
+
+ 
+            resultDiv.textContent = '';  
+            errorDiv.textContent = ''; 
+
+            if (input) {  
+                resultDiv.textContent = `sedang nyariin: "${input}"`;  
+            } else {  
+                errorDiv.textContent = 'masukin kalo mau.';  
+            }  
+        }  
+    </script>  
+    </center>
+</body>  
+</html>

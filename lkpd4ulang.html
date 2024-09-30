@@ -1,0 +1,66 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pilih Gambar dan Filter Opacity</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+            margin-top: 50px;  
+        }  
+
+        img {  
+            max-width: 100%;  
+            height: auto;  
+            opacity: 1;  
+            transition: opacity 0.5s;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <h1>Pilih Gambar dan Filter Opacity</h1>  
+
+    <div>  
+        <h2>sok pilih:</h2>  
+        <select id="imageSelector">  
+            <option value="mamam (1).png">Gambar 1</option>  
+            <option value="mamam (2).png">Gambar 2</option>  
+            <option value="mamam (3).png">Gambar 3</option>  
+        </select>  
+    </div>  
+
+    <div>  
+        <h2>Pilih opatitinya:</h2>  
+        <select id="opacitySelector">  
+            <option value="1">1</option>  
+            <option value="0.5">0.5</option>  
+            <option value="0.2">0.2</option>  
+        </select>  
+    </div>  
+
+    <div>  
+        <h2>gambar bakalan muncul:</h2>  
+        <img id="displayedImage" src="mamam (1).png" alt="Gambar yang ditampilkan">
+        <img id="displayedImage" src="mamam (2).png" alt="Gambar yang ditampilkan">  
+        <img id="displayedImage" src="mamam (3).png" alt="Gambar yang ditampilkan">    
+    </div>  
+
+    <script>  
+        const imageSelector = document.getElementById('imageSelector');  
+        const opacitySelector = document.getElementById('opacitySelector');  
+        const displayedImage = document.getElementById('displayedImage');  
+
+        imageSelector.addEventListener('change', function() {  
+            displayedImage.src = this.value;  
+        });  
+
+        opacitySelector.addEventListener('change', function() {  
+            displayedImage.style.opacity = this.value;  
+        });  
+    </script>  
+
+</body>  
+</html>
